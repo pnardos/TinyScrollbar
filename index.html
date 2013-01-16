@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tinyscrollbar by annexare</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tinyscrollbar</h1>
+        <p>Fork of Tiny Scrollbar - lightweight jQuery plugin. Styled, with update animation and HTML generation if container has no such one.</p>
+
+        <p class="view"><a href="https://github.com/annexare/TinyScrollbar">View the Project on GitHub <small>annexare/TinyScrollbar</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/annexare/TinyScrollbar/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/annexare/TinyScrollbar/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/annexare/TinyScrollbar">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>Tiny Scrollbar</h2>
+
+<p>Fork of <strong>Tiny Scrollbar</strong> — a lightweight jQuery plugin. Styled, with update animation and HTML markup generation if container hasn't. Originally created by <a href="http://www.baijs.nl/">Maarten Baijs</a>, v1.81.</p>
+
+<h3>Features</h3>
+
+<ul>
+<li>iPhone, iPad, Android support!</li>
+<li>New in 1.8. You can now drag the content on mobile devices!</li>
+<li>Can scroll vertical or horizontal.</li>
+<li>Supports scrolling by wheel, thumb, track or touch.</li>
+<li>It has a update function so it can handle content changes.</li>
+<li>Size of the scrollbar and thumb can be set to auto or a fixed number.</li>
+<li>Easy customizable.</li>
+<li>Supports normal scrolling and mobile style invert scrolling.</li>
+<li>Lightweight: it's only 200 lines of code. Mimified size is above 4KB.</li>
+</ul><h3>Modifications</h3>
+
+<p>Changes by <a href="http://annexare.com/">Annexare Studio</a>:</p>
+
+<ul>
+<li>HTML markup generation, so can be used with any block without special structure, all wrappers will be created automatically.</li>
+<li>CSS classes prefixes.</li>
+<li>Default theme, close to OS X styles (to be updated yet).</li>
+<li>Update scrolling animation, if used.</li>
+<li>jQuery UI class "ui-corner-all" is added, but border radius can be easily overriden.</li>
+</ul><h3>Usage</h3>
+
+<div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"scrollbar"</span><span class="nt">&gt;</span>This block will have a scrollbar. Should have more content actually.<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">// define scrollbars</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".scrollbar"</span><span class="p">).</span><span class="nx">tinyscrollbar</span><span class="p">({</span>
+            <span class="nx">prefix</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="nx">updateTime</span><span class="o">:</span> <span class="mi">200</span>
+        <span class="p">});</span>
+        <span class="c1">// update block when changed</span>
+        <span class="c1">// accepts 1 param:</span>
+        <span class="c1">// - 'top' (if none) or 'bottom';</span>
+        <span class="c1">// - 'relative' sets the position of the scrollbar relative to the old content when new content is passed in;</span>
+        <span class="c1">// - integer, to move to a certain location in the content.</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">".scrollbar"</span><span class="p">).</span><span class="nx">tinyscrollbar_update</span><span class="p">();</span>
+    <span class="p">});</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="nc">.scrollbar</span> <span class="p">{</span> <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span> <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.viewport</span> <span class="p">{</span> <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span> <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.overview</span> <span class="p">{</span> <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span> <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.thumb</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">85</span><span class="o">,</span><span class="m">85</span><span class="o">,</span><span class="m">85</span><span class="o">,.</span><span class="m">8</span><span class="p">);}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.scrollbar</span> <span class="p">{</span> <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span> <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">8px</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.track</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">34</span><span class="o">,</span><span class="m">34</span><span class="o">,</span><span class="m">34</span><span class="o">,.</span><span class="m">5</span><span class="p">);</span> <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span> <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span> <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.track</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.scrollbar</span> <span class="nc">.active</span> <span class="nc">.track</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">34</span><span class="o">,</span><span class="m">34</span><span class="o">,</span><span class="m">34</span><span class="o">,.</span><span class="m">7</span><span class="p">);}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.track</span><span class="nd">:hover</span> <span class="nc">.thumb</span><span class="o">,</span>
+<span class="nc">.scrollbar</span> <span class="nc">.active</span> <span class="nc">.thumb</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">153</span><span class="o">,</span><span class="m">153</span><span class="o">,</span><span class="m">153</span><span class="o">,.</span><span class="m">9</span><span class="p">);}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.thumb</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">8px</span><span class="p">;</span> <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span> <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span> <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span> <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.thumb</span><span class="nd">:hover</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">153</span><span class="o">,</span><span class="m">153</span><span class="o">,</span><span class="m">153</span><span class="o">,.</span><span class="m">9</span><span class="p">);}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.thumb</span> <span class="nc">.end</span> <span class="p">{</span> <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">8px</span><span class="p">;}</span>
+<span class="nc">.scrollbar</span> <span class="nc">.disable</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;}</span>
+<span class="nc">.noSelect</span> <span class="p">{</span> <span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="o">-</span><span class="n">khtml</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;}</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/annexare">annexare</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-23960333-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
