@@ -26,15 +26,15 @@
 
 		this.each(function()
 		{
-			if (!$('.scrollbar', this).length) {
-				$(this).html('<div class="' + options.prefix + 'scrollbar"><div class="ui-corner-all ' + options.prefix + 'track"><div class="ui-corner-all ' + options.prefix + 'thumb"><div class="' + options.prefix + 'end"></div></div></div></div>'
+			if (!$('.' + options.prefix + 'scrollbar', this).length) {
+				$(this).html('<div class="' + options.prefix + 'bar"><div class="ui-corner-all ' + options.prefix + 'track"><div class="ui-corner-all ' + options.prefix + 'thumb"><div class="' + options.prefix + 'end"></div></div></div></div>'
 					+ '<div class="' + options.prefix + 'viewport" style="height:' + ($(this).height() ? $(this).height() : $(this).parent().height()) + 'px;"><div class="' + options.prefix + 'overview">'
 					+ $(this).html()
 					+ '</div></div>'
 				);
 			}
-			if (!$(this).hasClass('cs-scrollbar')) {
-				$(this).addClass('cs-scrollbar');
+			if (!$(this).hasClass('scrollbar')) {
+				$(this).addClass('scrollbar');
 			}
 			$(this).data('tsb', new Scrollbar($(this), options));
 		});
@@ -53,7 +53,7 @@
 			, oWrapper    = root
 			, oViewport   = { obj: $('.' + options.prefix + 'viewport', root) }
 			, oContent    = { obj: $('.' + options.prefix + 'overview', root) }
-			, oScrollbar  = { obj: $('.' + options.prefix + 'scrollbar', root) }
+			, oScrollbar  = { obj: $('.' + options.prefix + 'bar', root) }
 			, oTrack      = { obj: $('.' + options.prefix + 'track', oScrollbar.obj) }
 			, oThumb      = { obj: $('.' + options.prefix + 'thumb', oScrollbar.obj) }
 			, sAxis       = options.axis === 'x'

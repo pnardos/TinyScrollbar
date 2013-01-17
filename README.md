@@ -1,6 +1,6 @@
 ## Tiny Scrollbar
 
-Fork of **Tiny Scrollbar** &mdash; a lightweight jQuery plugin. Styled, with update animation and HTML markup generation if container hasn't. Originally created by [Maarten Baijs](http://www.baijs.nl/), v1.81.
+Fork of **Tiny Scrollbar** &mdash; a lightweight jQuery plugin. Styled minimalistic scrollbar, with update animation and HTML generation if container hasn't. Originally created by [Maarten Baijs](http://www.baijs.nl/), v1.81.
 
 ### Features
 
@@ -51,7 +51,7 @@ Changes by [Annexare Studio](http://annexare.com/):
 	.scrollbar .viewport { overflow: hidden; position: relative;}
 	.scrollbar .overview { list-style: none; position: absolute; left: 0; top: 0;}
 	.scrollbar .thumb { background-color: rgba(85,85,85,.8);}
-	.scrollbar .scrollbar { position: relative; float: right; width: 8px;}
+	.scrollbar .bar { position: relative; float: right; width: 8px;}
 	.scrollbar .track { background-color: rgba(34,34,34,.5); height: 100%; width: 8px; position: relative; padding: 0;}
 	.scrollbar .track:hover,
 	.scrollbar .active .track { background-color: rgba(34,34,34,.7);}
